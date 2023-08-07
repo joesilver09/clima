@@ -1,0 +1,5 @@
+@media (min-height: 600px) {
+    body {
+      overflow: hidden;
+    }
+  }

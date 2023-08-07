@@ -27,19 +27,27 @@ function App() {
   }, []);
 
   // Genera iconCode aquí, después de actualizar weatherInfo
+
   const iconCode = weatherInfo?.weather[0].icon;
-  console.log(iconCode); // Verifica si el iconCode se obtiene correctamente
   const handleCityChange = (cityData) => {
     setCity(cityData);
     setWeatherInfo(cityData);
   };
-
+  const defaultBg = "/images/00.jpg";
+  
   return (
     <main
-      className={`bg-cover bg-center min-h-screen text-white font-lato flex flex-col justify-center items-center px-3`}
-      style={{ backgroundImage: `url('/images/background/${iconCode}.jpg')` }}
+    className={`bg-cover bg-center min-h-screen text-white font-lato flex flex-col justify-center items-center px-3 ${
+      window.innerHeight > 600 ? "scrollable" : ""
+    }`}
+      style={{
+        backgroundImage: iconCode
+          ? `url('/images/background/${iconCode}.jpg')`
+          : `url(${defaultBg})`,
+      }}
     >
-      <h2 className="text-red-400">{iconCode}</h2>
+      {/* el siguiente texto es con fines de pruebas */}
+      {/* <h2 className="text-red-400">{iconCode}</h2> */}
       <NightMode />
       <InputCity handleCityChange={handleCityChange} />
       <Weather weatherInfo={weatherInfo} city={city} />
