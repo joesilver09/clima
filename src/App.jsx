@@ -4,6 +4,7 @@ import axios from "axios";
 import Weather from "./components/Weather";
 import InputCity from "./components/InputCity";
 import NightMode from "./components/NightMode";
+import Cargando from "./components/Cargando";
 
 function App() {
   const [weatherInfo, setWeatherInfo] = useState(null);
@@ -33,8 +34,7 @@ function App() {
     setCity(cityData);
     setWeatherInfo(cityData);
   };
-  const defaultBg = "/images/00.jpg";
-  
+  const weatherBg = `/images/background/${iconCode}.jpg`
   return (
     <main
     className={`bg-cover bg-center min-h-screen text-white font-lato flex flex-col justify-center items-center px-3 ${
@@ -42,12 +42,11 @@ function App() {
     }`}
       style={{
         backgroundImage: iconCode
-          ? `url('/images/background/${iconCode}.jpg')`
-          : `url(${defaultBg})`,
+          ? `url(${weatherBg})`
+          : `none`,
       }}
     >
-      {/* el siguiente texto es con fines de pruebas */}
-      {/* <h2 className="text-red-400">{iconCode}</h2> */}
+      {/* <Cargando/> */}
       <NightMode />
       <InputCity handleCityChange={handleCityChange} />
       <Weather weatherInfo={weatherInfo} city={city} />

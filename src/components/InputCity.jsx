@@ -22,7 +22,7 @@ const InputCity = ({ handleCityChange }) => {
 
   return (
     <div>
-      <form className="text-black mt-4 " onSubmit={handleSubmit}>
+      <form className="text-black mt-4 sm:mt-7 sm:mb-3 " onSubmit={handleSubmit}>
         <input
           className="rounded-l-full py-1 px-2  bg-[#E0E0E080] placeholder-gray-600 outline-none
           sm:text-xl"

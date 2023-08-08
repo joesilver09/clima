@@ -61,26 +61,26 @@ const Weather = ({ weatherInfo }) => {
           </div>
         </section>
         {/* inferior */}
-        <section className="bg-[#E0E0E080] text-[0.95] font-bold scale-y-110 p-5 mb-3 divide-x-2 py-3 divide-[#0000003B] rounded-3xl grid grid-cols-[1fr,1fr,1fr] sm:grid-cols-1 sm:p-5 sm:mb-0 sm:py-0 sm:scale-y-100 sm:w-[10rem] sm:divide-x-0 sm:divide-y-2 sm:font-black sm:text-xl">
+        <section className="bg-[#E0E0E080] text-[0.95] font-bold scale-y-110 mb-3 divide-x-2 py-3 divide-[#0000003B] rounded-3xl grid grid-cols-[1fr,1fr,1fr] sm:grid-cols-1 sm:p-5 sm:mb-0 sm:py-0 sm:scale-y-100 sm:w-[10rem] sm:divide-x-0 sm:divide-y-2 sm:font-black sm:text-xl">
           <article className="flex items-center justify-center py-5 sm:py-0 sm:justify-start">
-            <div className="w-5 sm:w-7">
+            <div className="w-[1.15rem] ml-4 sm:w-7 sm:ml-0">
               <img src="/images/wind.png" alt="" />
             </div>
-            <span className="ml-2 sm:ml-2">{weatherInfo?.wind.speed}m/s</span>
+            <span className="ml-2 sm:ml-3">{weatherInfo?.wind.speed}m/s</span>
           </article>
 
           <article className="flex items-center justify-center sm:justify-start">
-            <div className="w-5 sm:w-7">
+            <div className="w-[1.10rem] ml-2 sm:w-7 sm:ml-0">
               <img src="/images/humidity.png" alt="" />
             </div>
-            <span className="ml-2 sm:ml-4">{weatherInfo?.main.humidity}%</span>
+            <span className="ml-4 sm:ml-6">{weatherInfo?.main.humidity}%</span>
           </article>
 
-          <article className="flex items-center justify-center pl-1 ml-3  sm:pl-0 sm:ml-0 sm:justify-start">
-            <div className="w-5 sm:w-7">
+          <article className="flex items-center justify-center sm:justify-start">
+            <div className="w-[1.15rem] sm:w-7">
               <img src="/images/pressure.png" alt="" />
             </div>
-            <span className="sm:ml-2">{weatherInfo?.main.pressure}hPa</span>
+            <span className="ml-2">{weatherInfo?.main.pressure}hPa</span>
           </article>
         </section>
       </section>
