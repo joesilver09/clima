@@ -21,10 +21,10 @@ const InputCity = ({ handleCityChange }) => {
   };
 
   return (
-    <div>
-      <form className="text-black mt-4 sm:mt-7 sm:mb-3 " onSubmit={handleSubmit}>
+    <div className="z-10">
+      <form className="text-black shadow-sm dark:text-[#fffdfd] mt-4 sm:mt-7 sm:mb-3 " onSubmit={handleSubmit}>
         <input
-          className="rounded-l-full py-1 px-2  bg-[#E0E0E080] placeholder-gray-600 outline-none
+          className="rounded-l-full py-1 px-2  bg-[#E0E0E080] dark:bg-[#84848480] placeholder-gray-600 dark:placeholder-[#ffffff8c] outline-none
           sm:text-xl"
           id="cityName"
           type="text"
@@ -32,7 +32,7 @@ const InputCity = ({ handleCityChange }) => {
           autoComplete="off"
         />
 
-        <button className="text-white p-1 bg-gradient-to-t from-blue-950/70 to-sky-500/20 rounded-r-full translate-y-[0.36rem] sm:translate-y-[0.42rem]">
+        <button className="text-white p-1 bg-gradient-to-t from-blue-950/70 to-sky-300/40 rounded-r-full translate-y-[0.36rem] sm:translate-y-[0.42rem]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

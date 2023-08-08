@@ -54,6 +54,7 @@ function App() {
         backgroundImage: iconCode ? `url(${weatherBg})` : "none",
       }}
     >
+      <div className=" fixed bg-cover bg-center dark:bg-[#0000006c] w-full h-[1000px]"/>
       <Suspense fallback={<Cargando />}>
         {showComponent ? (
           <>
