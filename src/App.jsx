@@ -4,7 +4,7 @@ import axios from "axios";
 import Cargando from "./components/Cargando";
 
 const Weather = lazy(() => import("./components/Weather"));
-const InputCity = lazy(() => import("./components/Inputcity"));
+const InputCity = lazy(() => import("./components/InputCity"));
 const NightMode = lazy(() => import("./components/NightMode"));
 
 function App() {
