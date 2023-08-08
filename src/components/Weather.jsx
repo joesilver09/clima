@@ -40,13 +40,13 @@ const Weather = ({ weatherInfo }) => {
   }, [countryCode]);
 
   return (
-    <section className="text-center my-5 pb-8 text-black">
+    <section className="text-center my-5 pb-8 text-black dark:text-[white]">
       <h2 className="pb-6 text-2xl font-bold sm:text-4xl">
         {weatherInfo?.name}, {countryInfo?.translations.spa.common}
       </h2>
       <section className="grid gap-3 sm:grid-cols-[auto_auto] sm:mt-8 sm:mb-12">
         {/* superior */}
-        <section className="bg-[#e9e5e580] mb-2 p-2 rounded-[38px] grid grid-cols-3 items-center sm:max-w-md sm:mb-0 sm:p-0 sm:mr-3">
+        <section className="bg-[#e9e5e580] dark:bg-[#44444491] mb-2 p-2 rounded-[38px] grid grid-cols-3 items-center sm:max-w-md sm:mb-0 sm:p-0 sm:mr-3">
           <h4 className=" text-[1.2rem] font-medium capitalize mt-3 col-span-3 sm:text-[1.6rem] sm:mt-6">
             {weatherInfo?.weather[0].description}
           </h4>
@@ -61,8 +61,8 @@ const Weather = ({ weatherInfo }) => {
           </div>
         </section>
         {/* inferior */}
-        <section className="bg-[#E0E0E080] text-[0.95] font-bold scale-y-110 mb-3 divide-x-2 py-3 divide-[#0000003B] rounded-3xl grid grid-cols-[1fr,1fr,1fr] sm:grid-cols-1 sm:p-5 sm:mb-0 sm:py-0 sm:scale-y-100 sm:w-[10rem] sm:divide-x-0 sm:divide-y-2 sm:font-black sm:text-xl">
-          <article className="flex items-center justify-center py-5 sm:py-0 sm:justify-start">
+        <section className="bg-[#E0E0E080] dark:bg-[#44444491] text-[0.95] font-bold scale-y-110 mb-3 divide-x-2 py-4 divide-[#0000003B] dark:divide-[#ffffff56] rounded-3xl grid grid-cols-[1fr,1fr,1fr] sm:grid-cols-1 sm:p-5 sm:mb-0 sm:py-0 sm:scale-y-100 sm:w-[10rem] sm:divide-x-0 sm:divide-y-2 sm:font-black sm:text-xl">
+          <article className="flex items-center justify-center py-4 sm:py-0 sm:justify-start">
             <div className="w-[1.15rem] ml-4 sm:w-7 sm:ml-0">
               <img src="/images/wind.png" alt="" />
             </div>
@@ -86,7 +86,7 @@ const Weather = ({ weatherInfo }) => {
       </section>
       <button
         onClick={handleChangeUnitTemp}
-        className="mt-6 mb-7 shadow-lg bg-white text-blue-500 py-1 px-7 rounded-2xl translate-y-[-0.8rem] sm:text-xl sm:mb-14"
+        className="mt-6 mb-7 shadow-lg bg-white text-blue-500 dark:text-white dark:bg-blue-500 py-1 px-7 rounded-2xl translate-y-[-0.8rem] sm:text-xl sm:mb-14"
       >
         Cambiar a {cambiarA}
       </button>

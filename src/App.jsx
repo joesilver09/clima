@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import Weather from "./components/Weather";
-import InputCity from "./components/InputCity";
-import NightMode from "./components/NightMode";
 import Cargando from "./components/Cargando";
 
+const Weather = lazy(() => import("./components/Weather"));
+const InputCity = lazy(() => import("./components/Inputcity"));
+const NightMode = lazy(() => import("./components/NightMode"));
+
 function App() {
+  const [showComponent, setShowComponent] = useState(false);
   const [weatherInfo, setWeatherInfo] = useState(null);
   const [city, setCity] = useState(null);
+
   useEffect(() => {
     const successWeather = (pos) => {
       const lat = pos.coords.latitude;
@@ -27,31 +30,46 @@ function App() {
     navigator.geolocation.getCurrentPosition(successWeather);
   }, []);
 
-  // Genera iconCode aquí, después de actualizar weatherInfo
-
   const iconCode = weatherInfo?.weather[0].icon;
   const handleCityChange = (cityData) => {
     setCity(cityData);
     setWeatherInfo(cityData);
   };
-  const weatherBg = `/images/background/${iconCode}.jpg`
+
+  useEffect(() => {
+    // Simulación de retraso de 2 segundos
+    const timeout = setTimeout(() => {
+      setShowComponent(true);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const weatherBg = iconCode ? `/images/background/${iconCode}.jpg` : "";
+
   return (
     <main
-    className={`bg-cover bg-center min-h-screen text-white font-lato flex flex-col justify-center items-center px-3 ${
-      window.innerHeight > 600 ? "scrollable" : ""
-    }`}
+      className="bg-cover bg-center min-h-screen text-white font-lato flex flex-col justify-center items-center px-3"
       style={{
-        backgroundImage: iconCode
-          ? `url(${weatherBg})`
-          : `none`,
+        backgroundImage: iconCode ? `url(${weatherBg})` : "none",
       }}
     >
-      {/* <Cargando/> */}
-      <NightMode />
-      <InputCity handleCityChange={handleCityChange} />
-      <Weather weatherInfo={weatherInfo} city={city} />
+      <Suspense fallback={<Cargando />}>
+        {showComponent ? (
+          <>
+            <NightMode />
+            <InputCity handleCityChange={handleCityChange} />
+            <Weather weatherInfo={weatherInfo} city={city} />
+          </>
+        ) : (
+          <Cargando/>
+        )}
+      </Suspense>
     </main>
   );
 }
 
 export default App;
+
+
+
