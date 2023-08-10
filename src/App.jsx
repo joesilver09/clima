@@ -47,6 +47,7 @@ function App() {
 
   const weatherBg = iconCode ? `/images/background/${iconCode}.jpg` : "";
 
+
   return (
     <main
       className="bg-cover bg-center min-h-screen text-white font-lato flex flex-col justify-center items-center px-3"

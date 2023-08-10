@@ -21,7 +21,7 @@ const InputCity = ({ handleCityChange }) => {
   };
 
   return (
-    <div className="z-10">
+    <div className="z-20">
       <form className="text-black shadow-sm dark:text-[#fffdfd] mt-4 sm:mt-7 sm:mb-3 " onSubmit={handleSubmit}>
         <input
           className="rounded-l-full py-1 px-2  bg-[#E0E0E080] dark:bg-[#84848480] placeholder-gray-600 dark:placeholder-[#ffffff8c] outline-none
