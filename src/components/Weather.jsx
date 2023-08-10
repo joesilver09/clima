@@ -127,14 +127,15 @@ const Weather = ({ weatherInfo }) => {
           <h2 className=" mb-24 p-3 mx-5 text-lg text-center sm:text-3xl bg-gradient-to-r from-[#1b0e2970] to-[#379bec70] rounded-full">
             Por favor abilita tu ubicación o ingresa una ciudad para continuar.{" "}
           </h2>
-          <div className="-z-10 fixed inset-0 flex items-center justify-center">
+          <div className="-z-10 fixed inset-0 w flex items-center justify-center">
             <img
               src="images/95.png"
               alt=""
               style={{ height: "400px", width: "100vw", opacity: 0.4 }}
             />
-            <div className="-z-[15] top-0 flex justify-center items-center right-0 fixed h-full w-full bg-cover bg-[url(images/00.png)]">
-          </div>
+            <div className="fixed -z-20">
+          <img src="images/00.png" alt="" style={{minHeight: "100vh", minWidth:"100vw"}}/>
+            </div>
         </div>
         </section>
       )}
