@@ -12,7 +12,7 @@ const Cargando = () => {
         <img src="/images/carga2.png" alt="Imagen" />
       </div>
       <div className="transform translate-y-[-1.3rem] w-[20.5rem] col-span-3 sm:w-[23rem]">
-        <img src="/images/loading.gif" alt="Imagen" />
+        <img src="/images/loader.gif" alt="Imagen" />
       </div>
     </div>
     </div>

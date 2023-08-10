@@ -40,7 +40,7 @@ function App() {
     // Simulación de retraso de 2 segundos
     const timeout = setTimeout(() => {
       setShowComponent(true);
-    }, 3000);
+    }, 1400);
 
     return () => clearTimeout(timeout);
   }, []);
