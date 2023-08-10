@@ -126,7 +126,7 @@ const Weather = ({ weatherInfo }) => {
     :( <h2 className="text-center sm:text-4xl  text-lg p-3 m-3 bg-gradient-to-r from-[#1b0e2970] to-[#379bec70] rounded-full mb-20">
       "Porfavor abilita tu ubicación o ingresa una ciudad para continuar" 
       <div className="-z-10 fixed inset-0 flex items-center justify-center"><img src="images/95.png" alt="" style={{ height: "400px", width: "100vw", opacity: 0.4 }} /></div>
-      <div className="-z-20 top-0 right-0 fixed h-full w-full bg-cover bg-[url(images/00.png)]"></div>
+      <div className="-z-20 top-0 right-0 fixed h-full w-full bg-cover bg-[url(images/background/02n.jpg)]"></div>
       </h2>)}
     </div>
   );
